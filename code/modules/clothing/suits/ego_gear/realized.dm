@@ -1,7 +1,7 @@
 /obj/item/clothing/suit/armor/ego_gear/realization // 260. You have to be an EX level agent to get these.
 	name = "unknown realized ego"
 	desc = "Notify coders immediately!"
-	icon = 'icons/obj/clothing/ego_gear/realization.dmi'
+	icon = 'icons/obj/clothing/ego_gear/realized.dmi'
 	worn_icon = 'icons/mob/clothing/ego_gear/realized.dmi'
 	attribute_requirements = list(
 							FORTITUDE_ATTRIBUTE = 100,
