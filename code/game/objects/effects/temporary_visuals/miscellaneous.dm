@@ -1020,3 +1020,8 @@
 	name = "heavenly blessing"
 	icon_state = "onesin_blessing"
 	duration = 12
+
+/obj/effect/temp_visual/warn1x1
+	name = "warning"
+	icon_state = "warning_gray"
+	duration = 1 SECONDS
