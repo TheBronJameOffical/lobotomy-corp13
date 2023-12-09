@@ -117,6 +117,9 @@ Lock in place, giving yourself a big damage boost.
 Ting Tang
 Rolls damage every hit between 10% and max damage like dice weapons. Has slightly more max damage than its tier. Chances scale off of current sanity.
 
+Middle
+Comes with a combo mechanic, choose to wield in both hands for 15% more damage.
+
 			Everything else.
 
 Mirae Life Insurance
