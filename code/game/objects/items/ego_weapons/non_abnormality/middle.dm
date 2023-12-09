@@ -21,6 +21,7 @@
 	var/combo_time
 	var/combo_wait = 10
 	var/wielded = FALSE
+	var/force_wielded = 26
 
 /obj/item/ego_weapon/city/middle/Initialize()
 	. = ..()
@@ -29,7 +30,7 @@
 
 /obj/item/ego_weapon/city/middle/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=23, force_wielded=26) // Math this out perhaps?
+	AddComponent(/datum/component/two_handed, force_unwielded=23, force_wielded=26) // Var this and connect it to the weapon, since its a component in theory it should be able to draw from this no?
 
 /obj/item/ego_weapon/city/middle/proc/OnWield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
@@ -54,6 +55,42 @@
 	..()
 	combo += 1
 	if(wielded)
-		force = 26 // Var this later, it can't grab force_wielded for some reason?
+		force = force_wielded
 		return
 	force = initial(force)
+
+/obj/item/ego_weapon/city/middle/big // The ricardos
+	name = "big sibling chains"
+	desc = "A set of chains meant to be wrapped arounds ones fist. Its way heavier, clearly meant for the Big Siblings of the Middle."
+	icon_state = "kbatong" // Placeholder
+	inhand_icon_state = "kbatong"
+	force = 35
+	attribute_requirements = list(
+							FORTITUDE_ATTRIBUTE = 80,
+							PRUDENCE_ATTRIBUTE = 80,
+							TEMPERANCE_ATTRIBUTE = 80,
+							JUSTICE_ATTRIBUTE = 80
+							)
+	force_wielded = 40
+
+/obj/item/ego_weapon/city/middle/big/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=35, force_wielded=40)
+
+/obj/item/ego_weapon/city/middle/great // The allegeded Great sibling line
+	name = "great sibling chains"
+	desc = "A set of chains meant to be wrapped arounds ones fist. You aren't sure how to even carry this around, only a Great Sibling could use this much weight."
+	icon_state = "kbatong" // Placeholder
+	inhand_icon_state = "kbatong"
+	force = 60
+	attribute_requirements = list(
+							FORTITUDE_ATTRIBUTE = 100,
+							PRUDENCE_ATTRIBUTE = 100,
+							TEMPERANCE_ATTRIBUTE = 100,
+							JUSTICE_ATTRIBUTE = 100
+							)
+	force_wielded = 70
+
+/obj/item/ego_weapon/city/middle/big/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=35, force_wielded=40)
