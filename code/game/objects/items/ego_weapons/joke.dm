@@ -106,8 +106,8 @@
 	righthand_file = 'icons/mob/inhands/96x96_righthand.dmi'
 	inhand_x_dimension = 96
 	inhand_y_dimension = 96
-	force = 180
-	attack_speed = 2.5
+	force = 140
+	attack_speed = 1.8
 	damtype = BLACK_DAMAGE
 	hitsound = 'sound/abnormalities/apocalypse/slam.ogg'
 	attack_verb_continuous = list("crushes", "devastates")
@@ -122,7 +122,6 @@
 	var/charge_cost = 20
 	var/dash_range = 8
 	var/activated
-	var/aoe = 400
 
 /obj/item/ego_weapon/violet_curse/Initialize()
 	..()
@@ -196,6 +195,7 @@
 	for(var/mob/living/L in livinginrange(2, target))
 		if(L.z != user.z)
 			continue
+		var/aoe = 300
 		var/userjust = (get_modified_attribute_level(user, JUSTICE_ATTRIBUTE))
 		var/justicemod = 1 + userjust/100
 		aoe*=justicemod
